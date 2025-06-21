@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+</head>
+<body>
+    <h1>SDFD Integration</h1>
+    <button id="authenticate">Authenticate (via Authorization Code Flow)</button>
+    <br><br>
+     <div id="auth-status">Not Authenticated</div>
+     <br><br>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="search">Search</button>
+    <br><br>
+     <div id="search-status"></div>
+     <br><br>
+
+    <script>
+        document.getElementById('authenticate').addEventListener('click', function() {
+            window.open('/authenticate', 'authPopup', 'width=600,height=600');
+        });
+
+        /*
+        document.getElementById('authenticate').addEventListener('click', function() {
+            fetch('/authenticate', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('auth-status').textContent = "Authentication started...";
+                })
+                .catch(error => alert('Error: ' + error));
+        });
+        */
+        document.getElementById('search').addEventListener('click', function() {
+            console.log('Search button clicked');
+            fetch('/search', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.code == 200) {
+                        document.getElementById('search-status').textContent = data.message;
+                    } else {
+                        document.getElementById('search-status').textContent = data.message;
+                    }
+                })
+                .catch(error => alert('Error: ' + error));
+        });
+    </script>
+</body>
+</html>

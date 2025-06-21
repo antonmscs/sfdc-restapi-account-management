@@ -1,8 +1,8 @@
 # Environments
-.env
+*.env
 env/
 
 #Database
 db/
 database/
-.db
+*.db
