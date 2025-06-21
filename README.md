@@ -18,7 +18,3 @@ pip3 install python-dotenv
 
 # Running
 python.exe app.py
-
-# ToDo
-Modify a query to return the latest session
-Need to maintain only current session in the database instead or adding new values after each authorization

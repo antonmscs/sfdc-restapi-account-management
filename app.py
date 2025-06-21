@@ -69,6 +69,7 @@ def callback():
     access_token = tokens.get('access_token')
     refresh_token = tokens.get('refresh_token')
     instance_url = tokens['instance_url']
+    db.clear_sessions()  # Clear previous sessions
     db.save_session(access_token, instance_url)
     
     # Print tokens in the console
