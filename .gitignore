@@ -6,3 +6,6 @@ env/
 db/
 database/
 *.db
+
+#Cache
+__pycache__/
