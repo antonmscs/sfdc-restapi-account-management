@@ -13,6 +13,9 @@ sqlite3 database is used to store access token and instance_url returned by SFDC
 Flask:
 pip3 install flask
 
+python-dotenv:
+pip3 install python-dotenv
+
 # Running
 python.exe app.py
 
